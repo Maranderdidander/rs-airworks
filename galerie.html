@@ -66,6 +66,23 @@
       color: white;
       cursor: pointer;
     }
+
+    /* Pfeil für die Navigation zurück zur Startseite */
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2rem;
+      color: #007BFF;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 9999;
+      transition: color 0.3s ease;
+    }
+    .back-arrow:hover {
+      color: #0056b3;
+    }
+
     a.back {
       display: inline-block;
       margin-top: 2rem;
@@ -83,6 +100,9 @@
     <h1>Galerie</h1>
     <p>Einblicke in unsere Luftaufnahmen</p>
   </header>
+
+  <!-- Pfeil-Button für den Rückweg zur Startseite -->
+  <a href="index.html" class="back-arrow">&#8592; Zurück</a>
 
   <section class="section">
     <div class="gallery">
