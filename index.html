@@ -49,6 +49,15 @@
       margin: 0 auto;
     }
 
+    /* Hintergrunddesign mit grauen Drohnensymbolen */
+    .background-drones {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Drone_icon.svg') repeat center center;
+      background-size: 10%;
+      opacity: 0.1;
+      height: 250px;
+      margin-top: 40px;
+    }
+
     #contact-social-wrapper {
       display: flex;
       justify-content: space-between;
@@ -107,6 +116,21 @@
       font-size: 0.9rem;
     }
 
+    /* Responsive für kleine Bildschirme */
+    @media (max-width: 700px) {
+      #contact-social-wrapper {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        align-items: flex-start;
+      }
+      .social-media {
+        text-align: left;
+        margin-top: 2rem;
+      }
+      .social-media div {
+        justify-content: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
@@ -124,6 +148,9 @@
     <h2>Über uns</h2>
     <p>R+S AirWorks bietet professionelle Luftaufnahmen für Events, Immobilien, Landschaften und vieles mehr – mit modernster Drohnentechnologie und einem Auge für das perfekte Bild.</p>
   </section>
+
+  <!-- Hintergrund mit grauen Drohnensymbolen -->
+  <section class="background-drones"></section>
 
   <section id="contact-social-wrapper">
     <section id="contact">
