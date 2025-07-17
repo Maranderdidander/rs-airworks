@@ -13,13 +13,14 @@
     }
     header {
       background: linear-gradient(90deg, #007BFF, #00BFFF);
-      color: white;
-      padding: 2rem;
+      padding: 3rem 0;
       text-align: center;
     }
-    header img {
-      max-height: 80px;
-      margin-bottom: 1rem;
+    header img.logo {
+      max-height: 150px;
+      width: auto;
+      display: inline-block;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
 
     /* --- HERO BEREICH --- */
@@ -86,9 +87,7 @@
 </head>
 <body>
   <header>
-    <img src="assets/logo.png" alt="R+S AirWorks Logo" />
-    <h1>R+S AirWorks</h1>
-    <p>Professional Droneshots</p>
+    <img src="assets/logo.png" alt="R+S AirWorks Logo" class="logo" />
   </header>
 
   <!-- HERO-BEREICH -->
