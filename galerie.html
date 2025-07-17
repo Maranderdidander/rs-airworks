@@ -25,11 +25,20 @@
       max-width: 1100px;
       margin: 0 auto;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+
+    /* Galerie-Layout für zwei Spalten */
+    .gallery-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap; /* Ermöglicht, dass die Spalten bei Bedarf untereinander angezeigt werden */
     }
+    .gallery-column {
+      flex: 1 1 48%; /* Jede Spalte nimmt 48% des Containers ein */
+      box-sizing: border-box;
+    }
+
+    /* Galerie-Bilder */
     .gallery img {
       width: 100%;
       border-radius: 8px;
@@ -38,6 +47,16 @@
     }
     .gallery img:hover {
       transform: scale(1.05);
+    }
+
+    /* Responsiv für kleinere Geräte (Handyhochformat) */
+    @media (max-width: 768px) {
+      .gallery-container {
+        flex-direction: column; /* Bei kleineren Bildschirmen werden die Spalten untereinander angezeigt */
+      }
+      .gallery-column {
+        flex: 1 1 100%; /* Jede Spalte nimmt 100% des Containers ein */
+      }
     }
 
     /* Lightbox Styles */
@@ -73,23 +92,13 @@
       top: 20px;
       left: 20px;
       font-size: 2rem;
-      color: white; /* Weißer Pfeil */
+      color: white;
       text-decoration: none;
       cursor: pointer;
       z-index: 9999;
     }
     .back-arrow:hover {
-      color: #ccc; /* Hellgrau beim Hover */
-    }
-
-    a.back {
-      display: inline-block;
-      margin-top: 2rem;
-      text-decoration: none;
-      background-color: #007BFF;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
+      color: #ccc;
     }
 
   </style>
@@ -104,31 +113,45 @@
   <a href="index.html" class="back-arrow">&#8592;</a>
 
   <section class="section">
-    <div class="gallery">
-      <!-- Bild 1 -->
-      <a href="javascript:void(0)" onclick="openLightbox('assets/img1.JPG')">
-        <img src="assets/img1.JPG" alt="Luftaufnahme 1" />
-      </a>
-      <!-- Bild 2 -->
-      <a href="javascript:void(0)" onclick="openLightbox('assets/img2.JPG')">
-        <img src="assets/img2.JPG" alt="Luftaufnahme 2" />
-      </a>
-      <!-- Bild 3 -->
-      <a href="javascript:void(0)" onclick="openLightbox('assets/img3.JPG')">
-        <img src="assets/img3.JPG" alt="Luftaufnahme 3" />
-      </a>
-      <!-- Weitere Bilder hinzufügen -->
-      <a href="javascript:void(0)" onclick="openLightbox('assets/img4.JPG')">
-        <img src="assets/img4.JPG" alt="Luftaufnahme 4" />
-      </a>
-      <a href="javascript:void(0)" onclick="openLightbox('assets/img5.JPG')">
-        <img src="assets/img5.JPG" alt="Luftaufnahme 5" />
-      </a>
-      <a href="javascript:void(0)" onclick="openLightbox('assets/img6.JPG')">
-        <img src="assets/img6.JPG" alt="Luftaufnahme 6" />
-      </a>
+    <div class="gallery-container">
+      <!-- Fotospalte -->
+      <div class="gallery-column">
+        <h2>Fotos</h2>
+        <!-- Bild 1 -->
+        <a href="javascript:void(0)" onclick="openLightbox('assets/img1.JPG')">
+          <img src="assets/img1.JPG" alt="Luftaufnahme 1" />
+        </a>
+        <!-- Bild 2 -->
+        <a href="javascript:void(0)" onclick="openLightbox('assets/img2.JPG')">
+          <img src="assets/img2.JPG" alt="Luftaufnahme 2" />
+        </a>
+        <!-- Bild 3 -->
+        <a href="javascript:void(0)" onclick="openLightbox('assets/img3.JPG')">
+          <img src="assets/img3.JPG" alt="Luftaufnahme 3" />
+        </a>
+        <!-- Weitere Bilder hinzufügen -->
+        <a href="javascript:void(0)" onclick="openLightbox('assets/img4.JPG')">
+          <img src="assets/img4.JPG" alt="Luftaufnahme 4" />
+        </a>
+      </div>
+
+      <!-- Videospalte -->
+      <div class="gallery-column">
+        <h2>Videos</h2>
+        <!-- Video 1 -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <img src="assets/video-thumbnail1.JPG" alt="Video Thumbnail 1" />
+        </a>
+        <!-- Video 2 -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <img src="assets/video-thumbnail2.JPG" alt="Video Thumbnail 2" />
+        </a>
+        <!-- Video 3 -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <img src="assets/video-thumbnail3.JPG" alt="Video Thumbnail 3" />
+        </a>
+      </div>
     </div>
-    <a class="back" href="index.html">Zurück zur Startseite</a>
   </section>
 
   <!-- Lightbox Overlay -->
@@ -142,11 +165,6 @@
     function openLightbox(imageSrc) {
       var lightbox = document.getElementById("lightbox");
       var lightboxImage = document.getElementById("lightboxImage");
-      var backArrow = document.getElementById("backArrow");
-      
-      // Blende den Pfeil aus, wenn das Bild geöffnet wird
-      backArrow.style.display = "none"; 
-
       lightbox.style.display = "flex"; // Zeige die Lightbox an
       lightboxImage.src = imageSrc; // Setze das Bild in der Lightbox
     }
@@ -154,11 +172,6 @@
     // Funktion zum Schließen der Lightbox
     function closeLightbox() {
       var lightbox = document.getElementById("lightbox");
-      var backArrow = document.getElementById("backArrow");
-
-      // Zeige den Pfeil wieder an, wenn die Lightbox geschlossen wird
-      backArrow.style.display = "block"; 
-
       lightbox.style.display = "none"; // Verstecke die Lightbox
     }
   </script>
