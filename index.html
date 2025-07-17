@@ -11,9 +11,6 @@
       background-color: #f4faff;
       color: #1a1a1a;
     }
-    html {
-      scroll-behavior: smooth; /* Ermöglicht sanftes Scrollen */
-    }
     header {
       position: relative;
       height: 280px;
@@ -52,7 +49,6 @@
       margin: 0 auto;
     }
 
-    /* Flexcontainer für Kontakt + Social Media nebeneinander */
     #contact-social-wrapper {
       display: flex;
       justify-content: space-between;
@@ -61,10 +57,9 @@
       padding: 3rem 1rem;
       gap: 2rem;
       flex-wrap: wrap;
-      align-items: center; /* vertikale Mitte */
+      align-items: center; 
     }
 
-    /* Kontaktbereich links */
     #contact {
       flex: 1 1 45%;
       min-width: 280px;
@@ -103,34 +98,6 @@
       background-color: #0056b3;
     }
 
-    /* Social Media Bereich rechts */
-    .social-media {
-      flex: 1 1 45%;
-      min-width: 220px;
-      text-align: right;
-    }
-    .social-media h2 {
-      margin-bottom: 1rem;
-      font-weight: normal;
-      font-size: 1.5rem;
-    }
-    .social-media div {
-      display: inline-flex;
-      gap: 1rem;
-      font-size: 1.8rem;
-      justify-content: flex-end;
-    }
-    .social-media a {
-      text-decoration: none;
-      transition: transform 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .social-media a:hover {
-      transform: scale(1.2);
-    }
-
     footer {
       background-color: #002B5B;
       color: white;
@@ -140,21 +107,6 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive für kleine Bildschirme */
-    @media (max-width: 700px) {
-      #contact-social-wrapper {
-        flex-direction: column;
-        padding: 2rem 1rem;
-        align-items: flex-start;
-      }
-      .social-media {
-        text-align: left;
-        margin-top: 2rem;
-      }
-      .social-media div {
-        justify-content: flex-start;
-      }
-    }
   </style>
 </head>
 <body>
@@ -176,10 +128,11 @@
   <section id="contact-social-wrapper">
     <section id="contact">
       <h2>Kontakt</h2>
-      <form>
+      <!-- Formspree Formular -->
+      <form method="POST" action="https://formspree.io/f/xwpqpkln" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Ihr Name" required />
         <input type="email" name="email" placeholder="Ihre E-Mail" required />
-        <textarea name="message" rows="5" placeholder="Ihre Nachricht"></textarea>
+        <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
         <button type="submit">Absenden</button>
       </form>
     </section>
