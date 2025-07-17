@@ -13,40 +13,17 @@
     }
     header {
       position: relative;
-      background: linear-gradient(90deg, #007BFF, #00BFFF);
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
+      height: 280px;
+      background: url('assets/hero.JPG') center center/cover no-repeat;
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 2rem;
-      /* Muster links und rechts */
-      background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
-      background-size: 40px 40px;
-      background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-      background-repeat: repeat;
-    }
-    .side-letter {
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: 900;
-      font-size: 3.5rem;
-      color: white;
-      user-select: none;
-      flex-shrink: 0;
-      width: 60px;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+      padding: 0 1rem;
     }
     header img {
-      max-height: 140px;
+      max-height: 160px;
       user-select: none;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
     }
     nav {
       display: flex;
@@ -159,21 +136,12 @@
         flex-direction: column;
         padding: 2rem 1rem;
       }
-      .side-letter {
-        font-size: 2.5rem;
-        width: 40px;
-      }
-      header img {
-        max-height: 110px;
-      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="side-letter">R</div>
     <img src="assets/logo.png" alt="R+S AirWorks Logo" />
-    <div class="side-letter">S</div>
   </header>
 
   <nav>
