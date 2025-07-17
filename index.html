@@ -12,15 +12,34 @@
       color: #1a1a1a;
     }
     header {
+      position: relative;
       background: linear-gradient(90deg, #007BFF, #00BFFF);
       padding: 3rem 0;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
     }
     header img.logo {
-      max-height: 150px;
+      max-height: 220px;
       width: auto;
-      display: inline-block;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      display: block;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+      z-index: 10;
+    }
+    .header-decor {
+      width: 60px;
+      height: 120px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #0056b3, #00bfff);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+    .header-decor.left {
+      transform: skewY(-10deg);
+    }
+    .header-decor.right {
+      transform: skewY(10deg);
     }
 
     /* --- HERO BEREICH --- */
@@ -87,7 +106,9 @@
 </head>
 <body>
   <header>
+    <div class="header-decor left"></div>
     <img src="assets/logo.png" alt="R+S AirWorks Logo" class="logo" />
+    <div class="header-decor right"></div>
   </header>
 
   <!-- HERO-BEREICH -->
