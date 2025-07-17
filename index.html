@@ -10,7 +10,6 @@
       font-family: Arial, sans-serif;
       background-color: #f4faff;
       color: #1a1a1a;
-      scroll-behavior: smooth;
     }
     header {
       background: linear-gradient(90deg, #007BFF, #00BFFF);
@@ -22,6 +21,24 @@
       max-height: 80px;
       margin-bottom: 1rem;
     }
+
+    /* --- HERO BEREICH --- */
+    .hero {
+      height: 400px;
+      background: url('assets/hero.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .hero-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-size: 1.5rem;
+    }
+
     nav {
       display: flex;
       justify-content: center;
@@ -61,6 +78,10 @@
       text-align: center;
       padding: 1rem;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
@@ -69,6 +90,14 @@
     <h1>R+S AirWorks</h1>
     <p>Professional Droneshots</p>
   </header>
+
+  <!-- HERO-BEREICH -->
+  <section class="hero">
+    <div class="hero-text">
+      Einzigartige Perspektiven aus der Luft
+    </div>
+  </section>
+
   <nav>
     <a href="#about">Über uns</a>
     <a href="galerie.html">Beispiel-Galerie</a>
