@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R+S AirWorks – Professional Droneshots</title>
+
+  <!-- Google Fonts import -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
@@ -19,6 +23,7 @@
       align-items: center;
       justify-content: center;
       gap: 1rem;
+      font-family: 'Poppins', Arial, sans-serif;
     }
     header img.logo {
       max-height: 220px;
@@ -28,12 +33,20 @@
       z-index: 10;
     }
     .header-decor {
+      position: relative;
       width: 60px;
       height: 120px;
       border-radius: 20px;
       background: linear-gradient(180deg, #0056b3, #00bfff);
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 4rem;
+      user-select: none;
     }
     .header-decor.left {
       transform: skewY(-10deg);
@@ -106,9 +119,9 @@
 </head>
 <body>
   <header>
-    <div class="header-decor left"></div>
+    <div class="header-decor left">R</div>
     <img src="assets/logo.png" alt="R+S AirWorks Logo" class="logo" />
-    <div class="header-decor right"></div>
+    <div class="header-decor right">S</div>
   </header>
 
   <!-- HERO-BEREICH -->
